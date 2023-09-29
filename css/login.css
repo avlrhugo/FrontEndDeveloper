@@ -1,0 +1,75 @@
+
+
+
+.grupo {
+
+    margin-top: 15px;
+}
+
+.box-login {
+
+    width: 255px;
+    height: auto;
+    border: 2px solid #ddd;
+    margin: auto;
+    margin-top: 70px;
+    padding: 20px;
+    border-radius: 5px;
+
+
+} 
+
+.titulo-login{
+
+text-align: center;
+color: var(--cor-primaria);
+font-size: 20px;
+font-weight: bolder;
+margin-bottom: 30px;
+
+}
+
+label {
+
+    font-size: 12px;
+}
+
+input,
+#botão-de-entrar {
+
+    padding: 8px;
+    width: 100%;
+    border-radius: 2px;
+    border: 2px solid #ddd; 
+
+    outline: none;
+    
+}
+
+#botão-de-entrar {
+
+    margin-top: 20px;
+    background-color: #FF9800;
+    border: none;
+    color: black;
+    font-weight: 600;
+}
+
+#botão-de-entrar:hover {
+    cursor: pointer;
+    background-color: #F57C00;
+}
+
+.esqueci-minha-senha {
+    text-align: right;
+    font-style: italic;
+    margin-top: 3px;
+}
+
+.esqueci-minha-senha a {
+
+    color:#FF9800;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+}
