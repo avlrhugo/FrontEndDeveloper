@@ -1,8 +1,62 @@
 const URL = 'http://localhost:3400/clientes';
+let modoEdicao = false;
 
+let btnAdicionar = document.getElementById ('btn-adicionar');
 let tabelaCliente = document.querySelector('table>tbody');
+let modalCliente = new bootstrap.Modal(document.getElementById("modal-cliente"), {});
+let tituloModal = document.querySelector('h4.modal-title');
+
+let btnSalvar = document.getElementById('btn-salvar');
+let btnCancelar = document.getElementById('btn-cancelar');
+
+let formModal = {
+
+id: document.getElementById('id'),
+nome: document.getElementById('nome'),
+email: document.getElementById('email'),
+telefone: document.getElementById('telefone'),
+cpf: document.getElementById('cpf'),
+dataCadastro: document.getElementById('dataCadastro'),
+
+}
 
 
+btnAdicionar.addEventListener('click', () =>{
+
+modoEdicao = false;
+tituloModal.textContent = "Adicionar cliente"
+modalCliente.show();
+});
+
+btnSalvar.addEventListener('click', () => {
+    //1º Capturar os dados do modal
+    let cliente = obterClienteDoModal();
+    //2° Verificar se os campos obrigatórios foram preenchidos.
+    //3° Enviar o cadastro
+    //4° Atualizar a tabela com o nome do cliente
+    //5° Fechar o modal
+modalCliente.hide();
+});
+
+btnCancelar.addEventListener('click', () => {
+    modalCliente.hide();
+});
+
+
+function obterClienteDoModal(){
+
+    return new Cliente({
+        id: formModal.id.value,
+        email: formModal.email.value,
+        nome: formModal.nome.value,
+        cpf: formModal.cpf.value,
+        telefone: formModal.telefone.value,
+        //dataCadastro: formModal.dataCadastro.value,
+
+    });
+
+    
+}
 
 function obterClientes() {
 
@@ -19,7 +73,10 @@ function obterClientes() {
 
 function editarCliente(id){
 
-alert('Aqui vou editar o cliente' + id);
+    modoEdicao = true;
+    tituloModal.textContent = "Editar cliente"
+    modalCliente.show();
+/*alert('Aqui vou editar o cliente' + id);*/
 
 }
 
